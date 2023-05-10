@@ -44,6 +44,7 @@
 
 html, body{
     height: 100%;
+    transition: all .2s ease-in-out;
 }
 
 html{
@@ -181,6 +182,10 @@ button{
     align-items: center;
 }
 
+.nav .bx:hover{
+    color: rgb(117, 21, 21);
+}
+
 .nav-logo{
     display: flex;
     align-items: center;
@@ -284,8 +289,11 @@ button{
 }
 
 
-.products__title{
+.product__title{
     margin-bottom: var(--sp-2);
+    text-align: center;
+
+    
 }
 
 .product{
@@ -378,8 +386,8 @@ button{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: var(--sp-2-5);
-    height: var(--sp-2-5);
+    width: var(--sp-3);
+    height: var(--sp-3);
     color: var(--text-color);
     background-color: var(--title-color);
     border-radius: 50%;
@@ -392,6 +400,126 @@ button{
     background-color: var(--primary-color);
 }
 
+/*DARK MODE*/
+
+.footer__darkmode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#darkM__container{
+    background-color: rgb(255, 255, 255);
+    width: 60px;
+    height: 30px;
+    box-shadow: inset 4px 4px 6px #cecece, 
+                inset -4px -4px 6px #fff;
+    margin: 0 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all .5s ease;
+    
+}
+
+.toggle{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    transform: scale(.6);
+    background-color: rgb(167, 167, 167);
+    border-radius: 25px;
+    box-shadow: 3px 3px 8px #c4c4c4,
+                -3px -3px 8px #fff ;
+    transition: all .5s ease;
+}
+
+#darkM__container.active .toggle{
+    left: 30px;
+    background-color: rgb(0, 0, 0);
+}
+
+
+body.active{
+    --body-color: hsl(0, 4%, 15%);
+    --text-color: hsl(0, 0%, 100%);
+    --title-color: hsl(0, 0%, 99%);
+    --bg-color:#504343;
+    --card-color: hsl(0, 9%, 18%);
+}
+
+body.active .footer__link{
+    color: var(--text-color);
+    background-color: var(--card-color);
+}
+body.active .footer__link:hover{
+    color: var(--body-color);
+    background-color: var(--text-color);
+}
+
+body.active .cart{
+    background-color: rgb(53, 45, 45);
+}
+
+body.active .nav .bx{
+    color: var(--text-color);
+}
+body.active .nav .bx:hover{
+    color: var(--primary-color);
+}
+
+body.active .cart__container .bx{
+    color: var(--text-color);
+}
+body.active .cart__container .bx:hover{
+    color: var(--primary-color);
+}
+body.active .cart__container .btn--buy:hover{
+    color: var(--primary-color);
+}
+
+body.active .product__btn:hover{
+    background-color: rgb(82, 3, 3);
+    color: var(--text-color);
+}
+
+
+
+
+@media (max-width: 768px) {
+    #darkM__container{
+        width: 50px;
+        height: 20px;
+    }
+    .toggle{
+        width: 20px;
+        height: 20px;
+    }
+    #darkM__container.active .toggle{
+        left: 28px;
+    }
+}
+@media (max-width: 768px) {
+    .footer__darkmode{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* ENDSDARK MODE*/
+
+
+@media (max-width: 768px) {
+    .footer{
+        padding-bottom: var(--header-height);
+    }
+}
+
 .footer__bottom{
     text-align: center;
 }
@@ -399,6 +527,7 @@ button{
 
 
 /* ENDS CSS FOOTER*/
+
 /*-----------------------------------------------*/
 /* START CSS CART*/
 
@@ -488,8 +617,9 @@ button{
     grid-template-rows: 1fr 30px;
 }
 
-.aricle__title{
+.article__title{
     grid-column: span 4;
+    font-size: var(--font-normal);
 }
 
 .article__quantity{
@@ -534,6 +664,11 @@ button{
     padding: var(--sp-1);
 }
 
+.btn--buy:hover,
+.cart__container .bx:hover{
+    color: var(--primary-color);
+}
+
 
 
 @media (min-width: 768px) {
@@ -560,9 +695,7 @@ button{
     .main{
         padding-top: var(--header-height);
     }
-    .product__title{
-        font-size: var(--small-font);
-    }
+    
 
     .cart{
         top: var(--header-height)
