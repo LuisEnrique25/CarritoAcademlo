@@ -21,7 +21,7 @@ function cart(db, printProducts){
         }
         return cantidad;
     }
-    ;
+    
 
 
     function printCart(){
