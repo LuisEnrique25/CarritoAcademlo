@@ -17,7 +17,7 @@ function products(productos){
                             <i class='bx bx-cart-download'></i>
                         </button>
                         <span class="product__price">$ ${product.price}</span>
-                        <span class="product__stock">Dsponible: ${product.quantity}</span>
+                        <span class="product__stock" data-cantidad="100">Dsponible: ${product.quantity}</span>
                         <h3 class="product__title">${product.name}</h3>
                     </div>
                 </article>

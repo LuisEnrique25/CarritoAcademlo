@@ -1,3 +1,4 @@
+
 function cart(db, printProducts){
     let cart = [];
     //Elementos del DOM
@@ -7,10 +8,22 @@ function cart(db, printProducts){
     const countDOM = document.querySelector('.cart__count--item');
     const totalDOM = document.querySelector('.cart__total--item');
     const checkoutDOM = document.querySelector('.btn--buy');
-
-
-
+    
+    
+    
     //FUNCIONES
+    function getCantidad(id){
+        let cantidad = 0;
+        for (const producto of db) {
+            if (producto.id === id){
+                cantidad = producto.quantity;
+            }
+        }
+        return cantidad;
+    }
+    ;
+
+
     function printCart(){
         let htmlCart = ''
 
@@ -62,13 +75,19 @@ function cart(db, printProducts){
     }
     function addToCart (id, qty = 1){
         const itemFinded = cart.find(item => item.id === id);
-
+        
+        
         if(itemFinded){
-            itemFinded.qty += qty
+            if(itemFinded.qty < getCantidad(id)){
+                itemFinded.qty += qty
+            }else{
+                window.alert('No quedan mas de ese productos en el inventario! Mil Disculpas')
+            }
         }else{
             cart.push({id, qty});
         }
-    printCart();
+        console.log(id)
+        printCart();
     }
     function removeFromCart(id, qty = 1){
         const itemFinded = cart.find(item => item.id === id);
@@ -100,15 +119,19 @@ function cart(db, printProducts){
         return total;
     }
     function checkout(){
-        for (const item of cart) {
-            const productFinded = db.find(product => product.id === item.id);
+        if(cart.length > 0){
+            for (const item of cart) {
+                const productFinded = db.find(product => product.id === item.id);
 
-            productFinded.quantity -= item.qty;
+                productFinded.quantity -= item.qty;
+            }
+            cart = [];
+            printCart();
+            printProducts();
+            window.alert('Compra Exitosa! Gracias por su compra!')
+        }else{
+            window.alert('Tu carrito esta vacio! Agrega al menos uno de los increibles productos que tenemos para ti!!')
         }
-        cart = [];
-        printCart();
-        printProducts();
-        window.alert('Compra Exitosa! Gracias por su compra!')
     }
 
    printCart();
@@ -117,8 +140,14 @@ function cart(db, printProducts){
 
     productsDOM.addEventListener('click', function(e){
         if(e.target.closest('.add--to--cart')){
+            
             let id = +e.target.closest('.add--to--cart').dataset.id;
+            if(getCantidad(id) !== 0){
             addToCart(id)
+            }else{
+                window.alert('Lo sentimos! Parece que ya no tenemos ese producto en inventario!')
+            }
+            
         }
     });
     
