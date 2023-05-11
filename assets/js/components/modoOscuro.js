@@ -1,3 +1,7 @@
+
+
+// SIN LOCALSTORAGE
+
 function ModoOscuro(){
     const toggle = document.getElementById('darkM__container');
     const body = document.querySelector('body');
