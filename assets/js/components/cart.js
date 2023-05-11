@@ -12,7 +12,7 @@ function cart(db, printProducts){
     
     
     //FUNCIONES
-    function getCantidad(id){
+    function getCantidad(id){      //REGRESA CANTIDAD EN INVENTARIO
         let cantidad = 0;
         for (const producto of db) {
             if (producto.id === id){
@@ -22,8 +22,6 @@ function cart(db, printProducts){
         return cantidad;
     }
     
-
-
     function printCart(){
         let htmlCart = ''
 

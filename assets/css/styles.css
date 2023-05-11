@@ -527,6 +527,98 @@ body.active .product__btn:hover{
 
 
 /* ENDS CSS FOOTER*/
+/* START CSS MODAL*/
+.modal__card{
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .4);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .8s;
+    z-index: var(--z-modal);
+}
+
+
+
+.modal__container{
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    background-color: var(--bg-color);
+    border-radius: var(--sp-1);
+    padding: var(--sp-2) var(--sp-1-5);
+    display: grid;
+    gap: var(--sp-1);
+    place-items: center;
+    grid-auto-columns: 100%;
+    
+}
+
+.modal__title{
+    font-size: var(--font-normal);
+}
+.modal__description{
+    margin-bottom: 5px;
+}
+.modal__img{
+    width: 90%;
+    max-width: 200px;
+}
+
+.modal__close{
+    color: var(--text-color);
+    background-color: var(--card-color);
+    padding: var(--sp-0-5) var(--sp-1);
+    border: 1px solid;
+    border-radius: 50%;
+    display: inline-block;
+    font-weight: bold;
+    transition: background-color .3s;
+    width: fit-content;
+    margin-top: 25px;
+    margin-right: 25px;
+}
+
+.modal--show{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .5s;
+}
+
+.modal__close:hover{
+    color: var(--card-color);
+    background-color: var(--primary-color);
+}
+
+.modal__footer{
+    display: flex;
+}
+.modal__footer p {
+    padding: 0 1rem;
+}
+@media (max-width: 768px) {
+    .modal__card{
+        top: 0;
+        bottom: var(--header-height);
+        flex-direction: column-reverse;
+    }
+    .modal__close{
+        margin-top: 0;
+        margin-bottom: 25px;
+    }
+    
+}
+
+
+
+/* ENDS CSS MODAL*/
 
 /*-----------------------------------------------*/
 /* START CSS CART*/

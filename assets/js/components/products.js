@@ -10,7 +10,7 @@ function products(productos){
             htmlProduct += `
             <article class="product">
                     <div class="product__image">
-                        <img src="${product.image}" alt="${product.name}">
+                        <img src="${product.image}" class="product__img" data-id="${product.id}" alt="${product.name}">
                     </div>
                     <div class="product__content">
                         <button type="button" class="product__btn add--to--cart" data-id="${product.id}">
