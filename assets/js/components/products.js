@@ -1,5 +1,5 @@
 function products(productos){
-    const db = [...productos];
+    const db = JSON.parse(window.localStorage.getItem('DB')) || [...productos];
 
     function printProducts(){
         const productsDOM = document.querySelector('.products__container');

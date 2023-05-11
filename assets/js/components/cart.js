@@ -127,10 +127,11 @@ function cart(db, printProducts){
                 const productFinded = db.find(product => product.id === item.id);
 
                 productFinded.quantity -= item.qty;
+                window.localStorage.setItem('DB', JSON.stringify(db));
             }
             cart = [];
             printCart();
-            printProducts();
+            printProducts(JSON.parse(window.localStorage.getItem('DB')));
             window.alert('Compra Exitosa! Gracias por su compra!')
         }else{
             window.alert('Tu carrito esta vacio! Agrega al menos uno de los increibles productos que tenemos para ti!!')
