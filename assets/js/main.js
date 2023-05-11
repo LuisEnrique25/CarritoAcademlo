@@ -4,7 +4,6 @@ import showCart from "./components/showCart.js";
 import products from "./components/products.js";
 import getProducts from "./helpers/getProducts.js";
 import cart from "./components/cart.js";
-import ModoOscuro from "./components/modoOscuro.js";
 import showModal from "./components/modal.js";
 import darkmode from "./components/darkMode.js";
 

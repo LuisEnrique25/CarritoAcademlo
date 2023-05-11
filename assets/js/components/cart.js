@@ -1,6 +1,7 @@
 
 function cart(db, printProducts){
-    let cart = [];
+    
+    let cart = JSON.parse(window.localStorage.getItem('cartDB')) ||  [];
     //Elementos del DOM
     const productsDOM = document.querySelector('.products__container');
     const notifyDOM = document.querySelector('.notify');
@@ -8,6 +9,7 @@ function cart(db, printProducts){
     const countDOM = document.querySelector('.cart__count--item');
     const totalDOM = document.querySelector('.cart__total--item');
     const checkoutDOM = document.querySelector('.btn--buy');
+    
     
     
     
@@ -70,6 +72,9 @@ function cart(db, printProducts){
         notifyDOM.innerHTML = showItemCount()
         countDOM.innerHTML = showItemCount()
         totalDOM.innerHTML = showTotal()
+        window.localStorage.setItem('cartDB', JSON.stringify(cart));
+        
+
     }
     function addToCart (id, qty = 1){
         const itemFinded = cart.find(item => item.id === id);
