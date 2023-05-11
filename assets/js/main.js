@@ -13,5 +13,5 @@ showCart();
 const {db, printProducts} = products(await getProducts());//Se le llama destructuracion
 
 cart(db, printProducts);
-showModal(db, printProducts);
+showModal(db);
 ModoOscuro();

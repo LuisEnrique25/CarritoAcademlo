@@ -6,8 +6,6 @@ function showModal(db){
     const modalDOM = document.querySelector('.modal__card');
     const modalContainer = document.querySelector('.modal__container')
     const closeModal = document.querySelector('.modal__close');
-    
-
 
     // Funciones
 
@@ -16,7 +14,6 @@ function showModal(db){
         for (const producto of db) {
             if(id === producto.id){
                 let htmlModal = `
-                
                     <img src=" ${producto.image} " alt="" class="modal__img">
                     <h2 class="modal__title">${producto.name}</h2>
                     <p class="modal__description">${producto.description}</p>
@@ -24,18 +21,12 @@ function showModal(db){
                     <p>En stock: ${producto.quantity}</p>
                     <p> Precio Unitario: $${producto.price}
                     </div>
-                    
-                
                 `;
                 modalContainer.innerHTML = htmlModal;
             }
         }
-        
-        console.log('funciona la llamada: ' + id)
-    
+        //console.log('funciona la llamada: ' + id)
     }
-
-
 
     //EVENTOS
 
