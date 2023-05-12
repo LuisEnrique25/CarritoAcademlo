@@ -8,6 +8,7 @@
     <title>Carrito de compras Academlo</title>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Oswald:wght@300&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="./assets/js/main.js" type="module" defer></script>
 </head>
@@ -57,7 +58,10 @@
 
     <main class="main">
         <section class="products section">
-            <h2 class="product__title section--title">Productos</h2>
+            <div class="products__header">
+                <h2 class="product__title--header section--title">Productos</h2>
+                <div class="btn__container--reset" id="reset-btn"> <p class="reset__db"><i class="fa-solid fa-cloud-arrow-down" style="color: #2369e1;"></i></p></div>
+            </div>
             <div class="products__container container">
                 
 

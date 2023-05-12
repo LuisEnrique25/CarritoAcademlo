@@ -8,5 +8,6 @@ Agregue persistencia con localStorage al carrito y a la lista de productos, asi 
 
 
 Agregue el favicon.io
+Agregue un boton para eliminar el elemento 'DB' del localStorage, para asi al actualizar poder ver todos los productos junto con su cantidad segun la base de datos original.
 
 Proyecto desplegado con Netlify: carrito-compras-luisr25.netlify.app

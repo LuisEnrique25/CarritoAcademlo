@@ -6,6 +6,7 @@ import getProducts from "./helpers/getProducts.js";
 import cart from "./components/cart.js";
 import showModal from "./components/modal.js";
 import darkmode from "./components/darkMode.js";
+import resetLocasStorage from "./components/resetLS.js";
 
 loader();
 showMenu();
@@ -15,3 +16,4 @@ const {db, printProducts} = products(await getProducts());//Se le llama destruct
 cart(db, printProducts);
 showModal(db);
 darkmode();
+resetLocasStorage();

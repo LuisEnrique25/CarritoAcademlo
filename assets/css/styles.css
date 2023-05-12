@@ -288,11 +288,45 @@ button{
     gap: var(--sp-2);
 }
 
+.products__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.product__title--header{
+    font-size: var(--big-font);
+}
+
+.btn__container--reset{
+    cursor: pointer;
+    padding: 2px 5px;
+    border-radius: 50%;
+}
+
+.btn__container--reset:hover{
+    background-color: var(--card-color);
+}
+
+.btn__container--reset p{
+    font-size: var(--medium-font);
+}
+@media (max-width: 768px) {
+    .products__header{
+        flex-direction: column;
+    }
+    .btn__container--reset{
+        margin: 10px;
+    }
+    
+}
+
+
 
 .product__title{
-    margin-bottom: var(--sp-2);
+    margin: var(--sp-2) auto;
     text-align: center;
-
+    font-size: var(--normal-font);
     
 }
 
